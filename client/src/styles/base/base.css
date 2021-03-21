@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f9f9f9;
+  --modalBackground: #fff;
+  --modalOverlayBackground: rgba(0,0,0, .3);
+  --scrollBarTrackBg: #cacaca;
+}
+
+:root.dark {
+  --background: #08070f;
+  --modalBackground: #100f17;
+  --modalOverlayBackground: rgba(0,0,0, .7);
+  --scrollBarTrackBg: #1e1c2a;
+}
+
+@layer base {
+  h1, h2 {
+    @apply font-bold;
+  }
+  
+  h3, h4, h5, h6 {
+    @apply font-medium;
+  }
+
+  h1 {
+    @apply text-4xl leading-loose;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  a {
+    @apply text-indigo-600;
+  }
+
+  button {
+    @apply 
+      group
+      relative
+      disabled:opacity-50
+      disabled:cursor-not-allowed
+      flex
+      justify-center
+      py-3
+      px-4
+      border
+      outline-none
+      border-transparent
+      text-sm
+      font-medium
+      rounded-full
+      text-white
+      bg-indigo-600;
+    
+      &:hover {
+      @apply bg-indigo-700;
+    }
+
+    &:focus {
+      @apply bg-indigo-900;
+      @apply outline-none;
+    }
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=password],
+  input[type=date],
+  textarea {
+    @apply
+      appearance-none
+      relative
+      block
+      w-full
+      px-6
+      py-3
+      border
+      border-gray-300
+      placeholder-gray-500
+      text-gray-900
+      rounded-full
+      readonly:opacity-50
+      focus:border-indigo-100
+      hover:cursor-not-allowed;
+
+    &:focus {
+      @apply outline-none;
+      @apply z-10;
+    }
+    
+    @screen mobile {
+      @apply text-sm;
+    }
+  }
+
+  input[type=checkbox] {
+    @apply
+      h-4
+      w-4
+      text-indigo-600
+      border-indigo-500
+      rounded
+      hover:cursor-not-allowed
+      focus:ring-0
+      readonly:opacity-50;
+    
+    &:focus {
+      @apply ring-0 outline-none;
+    }
+  }
+
+  textarea {
+    @apply rounded-md;
+    @apply resize-none;
+  }
+
+  label {
+    @apply text-gray-500;
+    @apply text-sm;
+  }
+
+  select {
+    @apply border-gray-300;
+    @apply rounded-full;
+    @apply px-4 py-3;
+  }
+}
+
+@layer utilities {
+    .scrollbar {
+        scrollbar-color: white;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+          width: 10px;
+        }
+   
+        &::-webkit-scrollbar-track {
+            background: var(--scrollBarTrackBg);
+        }
+   
+        &::-webkit-scrollbar-thumb {
+            @apply bg-gray-500;
+            border-radius: 10px;
+
+            &:hover {
+              @apply bg-indigo-500;
+            }
+        }
+    }
+}
+
+body {
+  margin: 0;
+  font-family: 'SF Pro Display', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  line-height: 1.6;
+  background: var(--background);
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.anticon {
+  @apply inline-flex items-center justify-center;
+}

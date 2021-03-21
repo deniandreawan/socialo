@@ -1,0 +1,11 @@
+node_modules/
+client/.env-dev
+client/.env-prod
+client/.env.development
+client/.env.production
+client/.env
+server/.env-dev
+server/.env-prod
+server/.env
+server/build
+yarn-error.log

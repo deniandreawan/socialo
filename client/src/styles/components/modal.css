@@ -1,0 +1,42 @@
+.modal {
+    position: absolute;
+    background: var(--modalBackground);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    outline: none;
+    overflow: hidden;
+    @apply rounded-lg shadow-xl;
+    @apply w-11/12;
+    @apply laptop:w-auto;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background-color: var(--modalOverlayBackground);
+  }
+
+  
+.ril-next-button,
+.ril-prev-button {
+    border-radius: 15px;
+}
+.ril-next-button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0
+}
+
+.ril-prev-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.ril-toolbar {
+    background: transparent;
+}

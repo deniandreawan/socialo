@@ -1,0 +1,22 @@
+{
+  "name": "foodie",
+  "version": "1.0.0",
+  "description": "A social media website for connecting with people around the world",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start-client": "cd client && npm start",
+    "start-server": "cd server && npm start",
+    "start": "concurrently \"npm run start-server\" \"npm run start-client\"",
+    "init-project": "concurrently \"cd frontend && npm install\" \"cd server && npm install\""
+  },
+  "keywords": [],
+  "author": "Deni Andreawan <deniandreawan0@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
